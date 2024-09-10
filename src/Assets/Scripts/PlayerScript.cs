@@ -10,6 +10,10 @@ public class PlayerScript : MonoBehaviour
     [SerializeField]float speed = 3.0f;
 
     int hp = 100;
+
+    GameObject catchableGO = null;
+    GameObject catchingGO = null;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +46,20 @@ public class PlayerScript : MonoBehaviour
         {
             transform.position -= speed * transform.right * Time.deltaTime;
         }
+
+        if(catchableGO != null)
+        {
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                catchingGO = catchableGO;
+                catchableGO.transform.SetParent(this.gameObject.transform);
+            }
+        }
+
+        if (catchingGO != null)
+        {
+            catchingGO.transform.localPosition = new Vector3(0, 0f, 1);
+        }
     }
 
     void OnCollisionEnter(Collision col)
@@ -53,8 +71,13 @@ public class PlayerScript : MonoBehaviour
             if (HPSlider != null)
             {
                 HPSlider.SetValue(hp);
-                //            Debug.Log("接触によるダメージ");
+//            Debug.Log("接触によるダメージ");
             }
         }
+    }
+
+    public void Catchable(GameObject col)
+    {
+        catchableGO = col;
     }
 }
