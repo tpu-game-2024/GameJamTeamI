@@ -1,10 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
+    [SerializeField] PlayerHP HPSlider;
+
     [SerializeField]float speed = 3.0f;
+
+    int hp = 100;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +41,20 @@ public class PlayerScript : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             transform.position -= speed * transform.right * Time.deltaTime;
+        }
+    }
+
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.tag == "Enemy")
+        {
+            hp -= 5;
+
+            if (HPSlider != null)
+            {
+                HPSlider.SetValue(hp);
+                //            Debug.Log("ê⁄êGÇ…ÇÊÇÈÉ_ÉÅÅ[ÉW");
+            }
         }
     }
 }

@@ -19,7 +19,7 @@ public class PlayerHP : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        const float speed = 1;
+        const float speed = 0.1f;
 
         if (HPSlider.value < value - speed)
         {
