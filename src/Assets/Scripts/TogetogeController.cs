@@ -23,7 +23,7 @@ public class TogetogeController : MonoBehaviour
 
         transform.rotation = Quaternion.Lerp(transform.rotation, lookRotation, 0.1f);
 
-        Vector3 p = new Vector3(0f, 0f, 0.05f);
+        Vector3 p = new Vector3(0f, 0f, 0.025f);
 
         transform.Translate(p);
     }
