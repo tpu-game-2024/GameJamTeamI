@@ -9,6 +9,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Ground
     second: {fileID: 2100000, guid: 21c9fcd69cb0b004eb64ce6d9b6b3736, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: yuka_lambert1_BaseColor
+    second: {fileID: 2800000, guid: 27c48377e124a54428006ecfd22f6c54, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
