@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TogetogeController : MonoBehaviour
+public class Sample3 : MonoBehaviour
 {
     //GameObjectŒ^‚ğ•Ï”target‚ÅéŒ¾‚µ‚Ü‚·B
     public GameObject target;
