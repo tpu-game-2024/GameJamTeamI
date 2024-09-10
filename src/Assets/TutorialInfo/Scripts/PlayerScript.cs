@@ -1,10 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
+using static UnityEngine.GraphicsBuffer;
 
 public class PlayerScript : MonoBehaviour
 {
     [SerializeField]float speed = 3.0f;
+    public CatchScript catchscript;
+    //public GameObject target;
+
+    //bool catching = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,5 +44,16 @@ public class PlayerScript : MonoBehaviour
         {
             transform.position -= speed * transform.right * Time.deltaTime;
         }
+        /*
+        if (Input.GetKey(KeyCode.C) && catchscript.Iscatch == true)
+        {
+            //Catching();
+        }
+        */
+    }
+    void Catching()
+    {
+        
     }
 }
+
