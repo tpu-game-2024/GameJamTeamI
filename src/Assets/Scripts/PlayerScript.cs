@@ -23,6 +23,7 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+#if false
         // Wキー（前方移動）
         if (Input.GetKey(KeyCode.W))
         {
@@ -46,8 +47,9 @@ public class PlayerScript : MonoBehaviour
         {
             transform.position -= speed * transform.right * Time.deltaTime;
         }
+#endif
 
-        if(catchableGO != null)
+        if (catchableGO != null)
         {
             if (Input.GetKeyDown(KeyCode.C))
             {
@@ -58,11 +60,11 @@ public class PlayerScript : MonoBehaviour
 
         if (catchingGO != null)
         {
-            catchingGO.transform.localPosition = new Vector3(0, 0f, 1);
+            catchingGO.transform.localPosition = new Vector3(0f, 1f, 1f);
         }
     }
 
-    void OnCollisionEnter(Collision col)
+    void OnControllerColliderHit(ControllerColliderHit col)
     {
         if (col.gameObject.tag == "Enemy")
         {
@@ -71,7 +73,7 @@ public class PlayerScript : MonoBehaviour
             if (HPSlider != null)
             {
                 HPSlider.SetValue(hp);
-//            Debug.Log("接触によるダメージ");
+//                UnityEngine.Debug.Log("接触によるダメージ");
             }
         }
     }

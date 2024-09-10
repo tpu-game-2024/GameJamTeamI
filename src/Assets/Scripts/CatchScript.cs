@@ -7,10 +7,10 @@ public class CatchScript : MonoBehaviour
 {
     public bool IsCatch = false;
 
-    [SerializeField, Tooltip("親")]
-    Transform parent = null;
-    [SerializeField, Tooltip("子")]
-    Transform child = null;
+//    [SerializeField, Tooltip("親")]
+//    Transform parent = null;
+//    [SerializeField, Tooltip("子")]
+//    Transform child = null;
 
     [SerializeField, Tooltip("player")] PlayerScript player;
 
@@ -23,12 +23,10 @@ public class CatchScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     void OnTriggerEnter(Collider collision)
     {
-//        Debug.Log("on hit");
         if (collision.gameObject.tag == "Enemy")
         {
             player.Catchable(collision.gameObject);
@@ -44,7 +42,7 @@ public class CatchScript : MonoBehaviour
         }
     }
 
-    void OnCollisionExit(Collision collision)
+    void OnTriggerExit(Collider collision)
     {
 //        IsCatch = false;
         player.Catchable(null);
