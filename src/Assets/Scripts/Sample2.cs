@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TogetogeController : MonoBehaviour
+public class Sample2 : MonoBehaviour
 {
     //GameObjectå^ÇïœêîtargetÇ≈êÈåæÇµÇ‹Ç∑ÅB
     public GameObject target;
@@ -21,9 +21,9 @@ public class TogetogeController : MonoBehaviour
         lookRotation.z = 0;
         lookRotation.x = 0;
 
-        transform.rotation = Quaternion.Lerp(transform.rotation, lookRotation, 1f);
+        transform.rotation = Quaternion.Lerp(transform.rotation, lookRotation, 0.0005f);
 
-        Vector3 p = new Vector3(0f, 0f, 0.001f);
+        Vector3 p = new Vector3(0f, 0f, 0.005f);
 
         transform.Translate(p);
     }
