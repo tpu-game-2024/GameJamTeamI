@@ -2113,5 +2113,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss
       objectReference: {fileID: 0}
+    - target: {fileID: 4354879136783435102, guid: 70fb1ae5eaa7f2f449a72c8110263c96,
+        type: 3}
+      propertyPath: BossHPSlider
+      value: 
+      objectReference: {fileID: 631516521}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70fb1ae5eaa7f2f449a72c8110263c96, type: 3}
