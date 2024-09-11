@@ -30,12 +30,19 @@ public class PlayerScript : MonoBehaviour
                 {
                     catchingGO = catchableGO;
                     catchingGO.transform.SetParent(this.gameObject.transform);
+                    EnemyStateBehavior sc = catchingGO.GetComponent<EnemyStateBehavior>();
+                    sc.Catch();
                 }
             }
         }
         else if(catchingGO != null)
         {
             // 押していなくて敵を持っていれば投げる
+            EnemyStateBehavior sc = catchingGO.GetComponent<EnemyStateBehavior>();
+            if (sc != null)
+            {
+                sc.Throw(transform.forward);
+            }
             catchingGO.transform.SetParent(null);
             catchingGO = null;
         }
