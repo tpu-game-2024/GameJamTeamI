@@ -13,7 +13,6 @@ public class PlayerHP : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        value = HPSlider.value;
     }
 
     // Update is called once per frame
@@ -32,6 +31,13 @@ public class PlayerHP : MonoBehaviour
         {
             HPSlider.value = value;
         }
+    }
+
+    public void SetMaxValue(int v)
+    {
+        HPSlider.maxValue = v;
+        value = v;
+        HPSlider.value = v;
     }
 
     public void SetValue(int v)
