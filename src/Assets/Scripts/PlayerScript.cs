@@ -6,13 +6,10 @@ using UnityEngine;
 public class PlayerScript : MonoBehaviour
 {
     [SerializeField] PlayerHP HPSlider;
+    [SerializeField] int hp = 1000;
 
-    [SerializeField]float speed = 3.0f;
-
-    int hp = 1000;
-
-    GameObject catchableGO = null;
-    GameObject catchingGO = null;
+    GameObject catchableGO = null;// ï¿½ï¿½ï¿½Ä‚ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½g
+    GameObject catchingGO = null;// ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½g
 
     // Start is called before the first frame update
     void Start()
@@ -23,42 +20,24 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-#if false
-        // WƒL[i‘O•ûˆÚ“®j
-        if (Input.GetKey(KeyCode.W))
+        // ï¿½Ûï¿½ï¿½ï¿½ï¿½ï¿½
+        if (Input.GetKeyDown(KeyCode.C))
         {
-            transform.position += speed * transform.forward * Time.deltaTime;
-        }
-
-        // SƒL[iŒã•ûˆÚ“®j
-        if (Input.GetKey(KeyCode.S))
-        {
-            transform.position -= speed * transform.forward * Time.deltaTime;
-        }
-
-        // DƒL[i‰EˆÚ“®j
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.position += speed * transform.right * Time.deltaTime;
-        }
-
-        // AƒL[i¶ˆÚ“®j
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.position -= speed * transform.right * Time.deltaTime;
-        }
-#endif
-
-        if (catchableGO != null)
-        {
-            if (Input.GetKeyDown(KeyCode.C))
+            // ï¿½Ûï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½È‚ï¿½ï¿½ï¿½Î“ï¿½ï¿½ï¿½ï¿½ï¿½
+            if(catchingGO == null)
             {
-                catchingGO = catchableGO;
-                catchableGO.transform.SetParent(this.gameObject.transform);
+                if (catchableGO != null)
+                {
+                    catchingGO = catchableGO;// ï¿½ß‚Ü‚ï¿½ï¿½ï¿½
+                    catchingGO.transform.SetParent(this.gameObject.transform);
+                }
+            }
+            else
+            {
+                catchingGO.transform.localPosition = new Vector3(0f, 1f, 1f);
             }
         }
-
-        if (catchingGO != null)
+        else// ï¿½Ûï¿½ï¿½ï¿½ï¿½È‚ï¿½
         {
             catchingGO.transform.localPosition = new Vector3(0f, 1f, 1f);
                 hp -= 1;
@@ -66,7 +45,7 @@ public class PlayerScript : MonoBehaviour
                 if (HPSlider != null)
                 {
                     HPSlider.SetValue(hp);
-                    // UnityEngine.Debug.Log("‚Á‚Ä‚¢‚é‚Ìƒ_ƒ[ƒW");
+                    // UnityEngine.Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½éï¿½Ìƒ_ï¿½ï¿½ï¿½[ï¿½W");
                 }
         }
     }
@@ -80,7 +59,7 @@ public class PlayerScript : MonoBehaviour
             if (HPSlider != null)
             {
                 HPSlider.SetValue(hp);
-//                UnityEngine.Debug.Log("ÚG‚É‚æ‚éƒ_ƒ[ƒW");
+//                UnityEngine.Debug.Log("ï¿½ÚGï¿½É‚ï¿½ï¿½_ï¿½ï¿½ï¿½[ï¿½W");
             }
         }
     }
