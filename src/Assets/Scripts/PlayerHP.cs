@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Diagnostics;
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,10 +11,13 @@ public class PlayerHP : MonoBehaviour
 {
     [SerializeField] Slider HPSlider = default!;
     float value;
+    float itaiCount = 0.0f;
+    Vector3 initPosition;
 
     // Start is called before the first frame update
     void Start()
     {
+        initPosition = transform.position;
     }
 
     // Update is called once per frame
@@ -31,6 +36,18 @@ public class PlayerHP : MonoBehaviour
         {
             HPSlider.value = value;
         }
+
+        // 動かす
+        itaiCount -= Time.deltaTime;
+        if(0.0f < itaiCount)
+        {
+            Vector3 pos = initPosition + new Vector3(0f, 10.0f * (float)Math.Sin(100.0f * Time.time), 0f);
+            transform.position = pos;
+        }
+        else
+        {
+            transform.position = initPosition;
+        }
     }
 
     public void SetMaxValue(int v)
@@ -43,5 +60,10 @@ public class PlayerHP : MonoBehaviour
     public void SetValue(int v)
     {
         value = v;
+    }
+
+    public void Itai()
+    {
+        itaiCount = 0.3f;
     }
 }

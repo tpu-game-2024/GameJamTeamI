@@ -28,7 +28,7 @@ public class EnemyStateBehavior : MonoBehaviour
                 state = 0;
                 transform.position = new Vector3(transform.position.x, height, transform.position.z);
                 rb.isKinematic = true;
-                UnityEngine.Debug.Log("–ß‚Á‚½");
+//                UnityEngine.Debug.Log("–ß‚Á‚½");
             }
         }
 
@@ -51,7 +51,7 @@ public class EnemyStateBehavior : MonoBehaviour
             rb.isKinematic = false;
             Vector3 v = 0.4f * dir.normalized + 0.5f * Vector3.up;
             rb.AddForce(v * 1000.0f);
-            UnityEngine.Debug.Log("comes");
+//            UnityEngine.Debug.Log("comes");
         }
     }
 

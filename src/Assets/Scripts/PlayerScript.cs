@@ -52,6 +52,7 @@ public class PlayerScript : MonoBehaviour
         {
             catchingGO.transform.localPosition = new Vector3(0f, 1f, 1f);
             hp -= 1;
+            HPSlider.Itai();
 
             if (HPSlider != null)
             {

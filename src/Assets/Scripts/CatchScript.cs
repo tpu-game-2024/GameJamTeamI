@@ -6,12 +6,6 @@ using UnityEngine;
 public class CatchScript : MonoBehaviour
 {
     public bool IsCatch = false;
-
-//    [SerializeField, Tooltip("親")]
-//    Transform parent = null;
-//    [SerializeField, Tooltip("子")]
-//    Transform child = null;
-
     [SerializeField, Tooltip("player")] PlayerScript player;
 
     // Start is called before the first frame update
