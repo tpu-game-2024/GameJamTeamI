@@ -6,6 +6,7 @@ public class TogetogeController : MonoBehaviour
 {
     //GameObjectŒ^‚ğ•Ï”target‚ÅéŒ¾‚µ‚Ü‚·B
     public GameObject target;
+    [SerializeField] int hp = 3;
 
     // Start is called before the first frame update
     void Start()
@@ -26,5 +27,17 @@ public class TogetogeController : MonoBehaviour
         Vector3 p = new Vector3(0f, 0f, 0.001f);
 
         transform.Translate(p);
+    }
+    void OnControllerColliderHit(ControllerColliderHit col)
+    {
+        if (col.gameObject.tag == "Enemy")
+        {
+            hp -= 1;
+            if (hp < 0)
+            {
+
+            }
+
+        }
     }
 }

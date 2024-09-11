@@ -18,7 +18,6 @@ public class Sample1 : MonoBehaviour
 
     void Update()
     {
-        // 現在の方向に向かって敵を前進させる
         transform.Translate(targetDirection * speed * Time.deltaTime, Space.World);
     }
 
@@ -26,7 +25,6 @@ public class Sample1 : MonoBehaviour
     {
         while (true)
         {
-            // プレイヤーの位置と敵の位置を取得し、Y軸を無視（XZ平面のみ）
             Vector3 direction = (player.position - transform.position).normalized;
 
             // Y軸の方向を無視して、XZ軸のみでの方向を取得

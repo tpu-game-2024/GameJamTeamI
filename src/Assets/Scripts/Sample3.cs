@@ -18,13 +18,13 @@ public class Sample3 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 direction = target.transform.position - transform.position;
-        direction.y = 0;  // Yé≤ÇÃâÒì]Çñ≥éãÇµÇƒêÖïΩñ Ç≈ÇÃâÒì]Ç…Ç∑ÇÈ
+        Quaternion lookRotation = Quaternion.LookRotation(target.transform.position - transform.position, Vector3.up);
 
-        Quaternion lookRotation = Quaternion.LookRotation(direction);
-        transform.rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime);
+        lookRotation.z = 0;
+        lookRotation.x = 0;
 
-
+        transform.rotation = Quaternion.Lerp(transform.rotation, lookRotation, 1f);
+       
     }
     void OnCollisionEnter(Collision col)
     {
