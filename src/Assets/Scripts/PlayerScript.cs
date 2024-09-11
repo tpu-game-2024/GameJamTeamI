@@ -7,7 +7,7 @@ public class PlayerScript : MonoBehaviour
 {
     [SerializeField] PlayerHP HPSlider;
     [SerializeField] ParticleSystem partile;
-    [SerializeField] int hp = 1000;
+    [SerializeField] int hp = 1500;
 
     GameObject catchableGO = null;// ���Ă�I�u�W�F�N�g
     GameObject catchingGO = null;// �����Ă���I�u�W�F�N�g
