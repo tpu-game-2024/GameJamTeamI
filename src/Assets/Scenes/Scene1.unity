@@ -6806,7 +6806,7 @@ PrefabInstance:
     - target: {fileID: 2168055266704911154, guid: 70fb1ae5eaa7f2f449a72c8110263c96,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.4909735
+      value: 3.6
       objectReference: {fileID: 0}
     - target: {fileID: 2168055266704911154, guid: 70fb1ae5eaa7f2f449a72c8110263c96,
         type: 3}
@@ -8097,7 +8097,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1785038602}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
