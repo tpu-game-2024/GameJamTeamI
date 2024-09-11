@@ -7,10 +7,20 @@ using UnityEngine.UI;
 public class GameOverScript : MonoBehaviour
 {
     static Canvas GameOverCanvas;
+    PlayerScript playerScript;
+    int HP;
     // Start is called before the first frame update
     void Awake()
     {
         GameOverCanvas = GetComponent<Canvas>();
+    }
+    private void Update()
+    {
+        HP = playerScript.GetHP();
+        if (HP >= 0)
+        {
+            GameOver();
+        }
     }
     static void GameOver()
     {
