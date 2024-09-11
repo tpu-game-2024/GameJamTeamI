@@ -7,19 +7,24 @@ using UnityEngine.UI;
 public class GameOverScript : MonoBehaviour
 {
     static Canvas GameOverCanvas;
-    PlayerScript playerScript;
+    [SerializeField]PlayerScript playerScript;
     int HP;
     // Start is called before the first frame update
     void Awake()
     {
         GameOverCanvas = GetComponent<Canvas>();
     }
-    private void Update()
+    public void Update()
     {
+//        Debug.Log(HP);
         HP = playerScript.GetHP();
-        if (HP >= 0)
+        if (HP <= 0)
         {
             GameOver();
+            if(Input.GetKey(KeyCode.Space))
+            {
+                Retry();
+            }
         }
     }
     static void GameOver()
@@ -30,7 +35,7 @@ public class GameOverScript : MonoBehaviour
     static public void Retry()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Scene1");
+        SceneManager.LoadScene("TitleScene");
     }
     static public void EndGame()
     {

@@ -13,8 +13,8 @@ public class ButtonScript : MonoBehaviour
 
      void Restart()
      {
-        
-     }
+        SceneManager.LoadScene("Scene1");
+    }
     void BackGame()
     {
 
