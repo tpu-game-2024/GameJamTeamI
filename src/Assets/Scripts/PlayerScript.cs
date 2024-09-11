@@ -61,6 +61,13 @@ public class PlayerScript : MonoBehaviour
         if (catchingGO != null)
         {
             catchingGO.transform.localPosition = new Vector3(0f, 1f, 1f);
+                hp -= 1;
+
+                if (HPSlider != null)
+                {
+                    HPSlider.SetValue(hp);
+                    // UnityEngine.Debug.Log("‚Á‚Ä‚¢‚é‚Ìƒ_ƒ[ƒW");
+                }
         }
     }
 
@@ -77,6 +84,7 @@ public class PlayerScript : MonoBehaviour
             }
         }
     }
+
 
     public void Catchable(GameObject col)
     {
