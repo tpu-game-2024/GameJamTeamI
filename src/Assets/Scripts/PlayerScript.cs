@@ -20,34 +20,44 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // �ێ�����
-        if (Input.GetKeyDown(KeyCode.C))
+        // 捕まえる
+        if (Input.GetKey(KeyCode.C))
         {
-            // �ێ����Ă��Ȃ���Γ�����
             if(catchingGO == null)
             {
+                // 捕まえていなければ捕まえる
                 if (catchableGO != null)
                 {
-                    catchingGO = catchableGO;// �߂܂���
+                    catchingGO = catchableGO;
                     catchingGO.transform.SetParent(this.gameObject.transform);
+                    EnemyStateBehavior sc = catchingGO.GetComponent<EnemyStateBehavior>();
+                    sc.Catch();
                 }
             }
-            else
-            {
-                catchingGO.transform.localPosition = new Vector3(0f, 1f, 1f);
-            }
         }
-        else// �ێ����Ȃ�
+        else if(catchingGO != null)
+        {
+            // 押していなくて敵を持っていれば投げる
+            EnemyStateBehavior sc = catchingGO.GetComponent<EnemyStateBehavior>();
+            if (sc != null)
+            {
+                sc.Throw(transform.forward);
+            }
+            catchingGO.transform.SetParent(null);
+            catchingGO = null;
+        }
+
+        // 捕まえている時はHPが下がる
+        if (catchingGO != null)
         {
             catchingGO.transform.localPosition = new Vector3(0f, 1f, 1f);
-                hp -= 1;
+            hp -= 1;
 
-                if (HPSlider != null)
-                {
-                    HPSlider.SetValue(hp);
-                    // UnityEngine.Debug.Log("�����Ă��鎞�̃_���[�W");
-                }
-        }
+            if (HPSlider != null)
+            {
+                HPSlider.SetValue(hp);
+            }
+       }
     }
 
     void OnControllerColliderHit(ControllerColliderHit col)

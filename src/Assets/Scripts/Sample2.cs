@@ -6,16 +6,19 @@ public class Sample2 : MonoBehaviour
 {
     //GameObjectŒ^‚ğ•Ï”target‚ÅéŒ¾‚µ‚Ü‚·B
     public GameObject target;
+    EnemyStateBehavior enemyState;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        enemyState = GetComponent<EnemyStateBehavior>();// ‰˜‚­‚Ä‚²‚ß‚ñ‚È‚³‚¢
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!enemyState.canMove()) { return; }// ‚Â‚©‚Ü‚Á‚Ä‚¢‚½‚è”ò‚ñ‚Å‚¢‚½‚è
+
         Quaternion lookRotation = Quaternion.LookRotation(target.transform.position - transform.position, Vector3.up);
 
         lookRotation.z = 0;
