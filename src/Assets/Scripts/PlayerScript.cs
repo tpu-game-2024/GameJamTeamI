@@ -9,7 +9,7 @@ public class PlayerScript : MonoBehaviour
 
     [SerializeField]float speed = 3.0f;
 
-    int hp = 100;
+    int hp = 1000;
 
     GameObject catchableGO = null;
     GameObject catchingGO = null;
@@ -17,7 +17,7 @@ public class PlayerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        HPSlider.SetMaxValue(hp);
     }
 
     // Update is called once per frame
