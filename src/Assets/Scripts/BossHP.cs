@@ -6,14 +6,14 @@ using UnityEngine.UI;
 public class BossHP : MonoBehaviour
 {
     [SerializeField] Slider BossHPSlider;
-    [SerializeField] int hp = 1;
+    [SerializeField] int HP = 1;
     private bool isColliding = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        BossHPSlider.maxValue = hp;
-        BossHPSlider.value = hp; 
+        BossHPSlider.maxValue = HP;
+        BossHPSlider.value = HP; 
     }
 
     // Update is called once per frame
@@ -28,11 +28,11 @@ public class BossHP : MonoBehaviour
 
         if (col.gameObject.tag == "Enemy")
         {
-            hp -= 1;
+            HP -= 1;
 
             if (BossHPSlider != null)
             {
-                BossHPSlider.value = hp;
+                BossHPSlider.value = HP;
             }
 
             isColliding = true;
