@@ -46,5 +46,10 @@ public class BossHP : MonoBehaviour
             isColliding = false;
         }
     }
+
+    public int GetBossHP()
+    {
+        return HP;
+    }
 }
 
