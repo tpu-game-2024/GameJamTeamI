@@ -6,8 +6,9 @@ using UnityEngine.UI;
 public class BossHP : MonoBehaviour
 {
     [SerializeField] Slider BossHPSlider;
-    [SerializeField] int HP = 1;
+    [SerializeField] int HP = 5;
     private bool isColliding = false;
+    public BossHP bossHP;
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +46,11 @@ public class BossHP : MonoBehaviour
         {
             isColliding = false;
         }
+    }
+
+    public int GetBossHP()
+    {
+        return HP;
     }
 }
 
