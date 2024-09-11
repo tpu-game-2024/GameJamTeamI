@@ -3,6 +3,8 @@
 
 「痛い」というテーマでゲームを作りました。
 
+[★遊べるページへ行く★](https://tpu-game-2024.github.io/GameJamTeamI/)
+
 https://github.com/user-attachments/assets/8c8c92ae-6376-4644-8844-8e78e5d27ba1
 
 コウゲイゲームジャム: 東京工芸大学 芸術学部 ゲーム学科の学内イベント。2024/9/10 10:00-18:00, 2024/9/11 9:30-16:00 に実施。 
