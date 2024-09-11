@@ -69,4 +69,9 @@ public class PlayerScript : MonoBehaviour
     {
         catchableGO = col;
     }
+
+    public int GetHP()
+    {
+        return hp;
+    }
 }
