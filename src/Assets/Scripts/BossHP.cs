@@ -8,7 +8,6 @@ public class BossHP : MonoBehaviour
     [SerializeField] Slider BossHPSlider;
     [SerializeField] int HP = 5;
     private bool isColliding = false;
-    public BossHP bossHP;
 
     // Start is called before the first frame update
     void Start()
