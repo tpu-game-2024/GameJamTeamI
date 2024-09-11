@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerScript : MonoBehaviour
 {
     [SerializeField] PlayerHP HPSlider;
+    [SerializeField] ParticleSystem partile;
     [SerializeField] int hp = 1000;
 
     GameObject catchableGO = null;// ���Ă�I�u�W�F�N�g
@@ -15,6 +16,7 @@ public class PlayerScript : MonoBehaviour
     void Start()
     {
         HPSlider.SetMaxValue(hp);
+        partile.enableEmission = false;
     }
 
     // Update is called once per frame
@@ -32,6 +34,7 @@ public class PlayerScript : MonoBehaviour
                     catchingGO.transform.SetParent(this.gameObject.transform);
                     EnemyStateBehavior sc = catchingGO.GetComponent<EnemyStateBehavior>();
                     sc.Catch();
+                    partile.enableEmission = true;
                 }
             }
         }
@@ -43,6 +46,7 @@ public class PlayerScript : MonoBehaviour
             {
                 sc.Throw(transform.forward);
             }
+            partile.enableEmission = false;
             catchingGO.transform.SetParent(null);
             catchingGO = null;
         }
