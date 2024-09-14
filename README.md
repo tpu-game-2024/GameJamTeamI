@@ -18,3 +18,7 @@ https://github.com/user-attachments/assets/8c8c92ae-6376-4644-8844-8e78e5d27ba1
 # 操作
 - 移動：WASDかカーソルキー
 - 捕まえる：「C」キー
+
+# おまけ
+イメージイラスト
+![image](https://github.com/user-attachments/assets/afac50e7-4e17-4925-9c3a-6bb3f302f4ca)
